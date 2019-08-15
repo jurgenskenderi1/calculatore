@@ -1,0 +1,78 @@
+package calculator;
+
+import static java.lang.System.out;
+import java.util.Scanner;
+
+public class Calculator {
+
+    public static void main(String[] args) {
+        //hello today will learn how to create a simple calculatore
+        //first lets import the scaner 
+        Scanner sc = new Scanner(System.in);
+        out.println("Pres + for add - for sub * for mul and / for div");
+        String user;
+
+        do {
+            out.println("Select the operator");
+            String operator = sc.next();
+            switch (operator) {
+                case "+":
+                    int x,
+                     y,
+                     z;
+                    out.println("Enter frist number");
+                    x = sc.nextInt();
+                    out.println("Enter second number");
+                    y = sc.nextInt();
+                    z = x + y;
+                    out.println(x + "+" + y + "=" + z);
+                    //enter break 
+                    break;
+                case "-":
+                    int nr1,
+                     nr2,
+                     sub1;
+                    out.println("Enter the frist number");
+                    nr1 = sc.nextInt();
+                    out.println("Enter the secon number");
+                    nr2 = sc.nextInt();
+                    sub1 = nr1 - nr2;
+                    out.print(nr1 + "-" + nr2 + "=" + sub1);
+                    break;
+                case "*":
+                    int num1,
+                     num2,
+                     mul3;
+                    out.println("Enter the frist number");
+                    num1 = sc.nextInt();
+                    out.println("Enter the second number");
+                    num2 = sc.nextInt();
+                    mul3 = num1 * num2;
+                    out.print(num1 + "-" + num2 + "=" + mul3);
+                    break;
+                case "/":
+                    int div1,
+                     div2,
+                     div;
+                    out.println("Enter the frist number");
+                    div1 = sc.nextInt();
+                    out.println("Enter the second number");
+                    div2 = sc.nextInt();
+                    while (div2 == 0) {
+                        out.println("Error div with 0.... \n Pleas reenter the Second number");
+                        div2 = sc.nextInt();
+                        div = div1 / div2;
+                        out.println(div1 + "/" + div2 + "=" + div);
+                    }
+                    div = div1 / div2;
+                    out.println(div1 + "/" + div2 + "=" + div);
+                    break;
+            }
+            out.println("pres '+'or '-' or '*' or '/' continue");
+            //while user pres +-*/ continue 
+            user = sc.next();
+        } while (user.contains("+") || user.contains("-") || user.contains("*") || user.contains("/"));
+    }
+
+}
+//thanks for watching 
